@@ -1,0 +1,52 @@
+.social-sharer {
+	// display: flex;
+	padding: 0.5em;
+	// width: 100%;
+	text-align: right;
+
+	@include mediaQuery($max, $palm) {
+		text-align: left;
+	}
+	
+	a {
+		border: none;
+	}
+}
+
+.social-sharer__title {
+	display: block;
+	width: 100%;
+	font-family: $font-primary;
+}
+
+.social-sharer__link {
+	display: block;
+	cursor: pointer;
+	padding: 12px 0 0;
+	vertical-align: baseline;
+
+	img {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+.social-sharer__survey {
+	padding: 12px 0;
+	display: block;
+	text-align: right;
+
+	img {
+		width: 140px;
+	}
+}
+
+.SocialMediaShareButton {
+	display: inline-block;
+	cursor: pointer;
+	transition: all ease 0.3s;
+
+	&:hover {
+		transform: translateY(-6px);
+	}
+}

@@ -1,0 +1,164 @@
+.carousel {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+.gallery-wrapper {
+	position: relative;
+	@include mediaQuery(null, $post-palm, $pre-desktop) {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+.carousel__gallery {
+	display: flex;
+	flex-flow: row nowrap;
+	transition: all ease 0.3s;
+	width: 100%;
+}
+
+.carousel__arrow {
+	position: absolute;
+	width: 52px;
+	height: 100%;
+	background: none;
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include mediaQuery($max, $palm) {
+		background: rgba(255,255,255,0.2);
+		align-items: baseline;
+		padding-top: 36px;
+	}
+
+	img {
+		padding-top: 50%;
+		vertical-align: middle;
+		cursor: pointer;
+	}
+
+}
+	.carousel__arrow.left {
+		left: -52px;
+		top: 0;
+		color: red;
+		@include mediaQuery($max, $palm) {
+			left: 0;
+			bottom: 0;
+		}
+	}
+
+	.carousel__arrow--hideLeft.left {
+		display: none;
+	}
+
+	.carousel__arrow.right {
+		right: -52px;
+		top: 0;
+		@include mediaQuery($max, $palm) {
+			top: auto;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	.carousel__arrow--hideRight.right {
+		display: none;
+	}
+
+.gallery-item {
+	min-width: 20%;
+	padding-right: 12px;
+
+	@include mediaQuery($max, $palm) {
+		min-width: 100%;
+		padding-right: 0;
+	}
+
+	@include mediaQuery(null, $post-palm, $laptop) {
+		min-width: 33.3333%;
+	}
+
+}
+
+.gallery-item__image {
+	width: 100%;
+	margin-bottom: 1em;
+	position: relative;
+
+	img {
+		width: 100%;
+		// height: 100%;
+	}
+}
+
+.gallery-item__overlay {
+	background: rgba(0,0,0,0.8);
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: calc(100% - 5px);
+	opacity: 0;
+	cursor: pointer;
+	transition: opacity 0.4s;
+
+	&:hover {
+		opacity: 0.75;
+	}
+
+	img {
+		width: 52px;
+	}
+}
+
+.gallery-item__title {
+	width: 100;
+	font-weight: 600;
+	display: block;
+	margin-bottom: 6px;
+	display: block;
+	@include mediaQuery($max, $palm) {
+		padding: 0.75em;
+	}
+}
+.gallery-item__summary {
+	font-size: 0.9em;
+	display: block;
+
+	@include mediaQuery($max, $palm) {
+		padding: 0.75em;
+	}
+}
+.gallery-item__time {
+	display: block;
+	font-size: 0.75em;
+	font-weight: 800;
+	font-family: $font-primary;
+
+	@include mediaQuery($max, $palm) {
+		padding: 0.75em;
+	}
+}
+
+.gallery-item__link {
+	margin-top: 6px;
+	color: $red-link;
+	font-family: $font-primary;
+	border-bottom: 2px solid $red-link;
+	cursor: pointer;
+
+	@include mediaQuery($max, $palm) {
+		padding: 0.75em;
+	}
+
+	&:hover {
+		border-bottom: 2px solid $darkgrey;
+		color: $darkgrey;
+	}
+}

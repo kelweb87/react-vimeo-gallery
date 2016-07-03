@@ -1,0 +1,30 @@
+.video-meta {
+	width: 75%;
+
+	@include mediaQuery($max, $tablet-width) {
+		width: 100%;
+		order: 0;
+	}
+
+	a {
+		color: $red-link;
+		padding: 0;
+		font-family: $font-primary;
+		text-decoration: none;
+		border-bottom: 2px solid $red-link;
+		cursor: pointer;
+
+		&:hover {
+			color: $darkgrey;
+			border-bottom: 2px solid $darkgrey;
+		}
+	}
+}
+
+.video-meta__header {
+	margin-bottom: 12px;
+}
+
+.video-meta__sub-header {
+	margin: 0;
+}

@@ -1,0 +1,131 @@
+@font-face{
+	font-family:"Avenir";
+	src:url("../Fonts/724344/e9427e66-afa8-4ceb-bb31-7a970fb469ea.eot?#iefix");
+	src:url("../Fonts/724344/e9427e66-afa8-4ceb-bb31-7a970fb469ea.eot?#iefix") format("eot"),
+	url("../Fonts/724344/748da442-9dd9-4a4d-8da0-b114e16e5d7f.woff") format("woff"),
+	url("../Fonts/724344/6beeeb66-0b4e-4162-8788-8bf688b9829a.ttf") format("truetype"),
+	url("../Fonts/724344/8afe744b-89a2-4ae2-a88e-05c6882580f3.svg#8afe744b-89a2-4ae2-a88e-05c6882580f3") format("svg");
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: $font-stack;
+	font-size: $base-size;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+h1, h2 {
+	font-family: $font-primary;
+	font-weight: 400;
+}
+
+
+
+a {
+	color: $red-link;
+	font-family: $font-primary;
+	text-decoration: none;
+	padding: 0 8px 5px;
+
+	&:hover {
+		border-bottom: 2px solid $red-link;
+	}
+
+
+}
+
+.container {
+	max-width: $full-width;
+	margin: 0 auto;
+
+	@include mediaQuery($max, $palm) {
+		max-width: $phone-width;
+		padding: 12px;
+	}
+	@include mediaQuery($min, $tablet) {
+		max-width: $tablet-width;
+	}
+	@include mediaQuery($min, $laptop) {
+		max-width: $laptop-width;
+	}
+}
+
+.flex-div {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin: 1em 0 2em;
+
+	@include mediaQuery($max, $tablet-width) {
+		flex-wrap: wrap;
+	}
+}
+
+.header {
+	text-align: center;
+	h1 {
+		text-transform: uppercase;
+		font-size: 2.5rem;
+
+		@include mediaQuery($max, $tablet-width) {
+			line-height: 1.5em;
+		}
+	}
+}
+
+.nav {
+	list-style: none;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    padding: 0;
+    text-decoration: none;
+    margin-top: 0;
+
+    li {
+    	display: inline-block;
+    	margin: 0 0.25em;
+
+    	span {
+    		display: inline-block;
+    		width: 8px;
+    		height: 8px;
+    		border-radius: 50%;
+    		background: $red-link;
+    	}
+    }
+}
+
+.post {
+	margin: 0 8em;
+	line-height: 2em;
+
+	@include mediaQuery($max, $tablet) {
+		margin: 0 0.5em;
+	}
+
+	a {
+		color: $red-link;
+		padding: 0;
+		font-family: $font-primary;
+		text-decoration: none;
+		border-bottom: 2px solid $red-link;
+		cursor: pointer;
+
+		&:hover {
+			color: $darkgrey;
+			border-bottom: 2px solid $darkgrey;
+		}
+	}
+}

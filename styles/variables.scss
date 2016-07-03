@@ -1,0 +1,37 @@
+$viewport-increment: 0.1px; // customize to suite
+
+// Desktop
+$desktop: 1024px;
+$pre-desktop: $desktop - $viewport-increment;
+
+//laptop
+$laptop: 900px;
+$pre-laptop: $laptop - $viewport-increment;
+
+// Tablet
+$tablet: 768px;
+$pre-tablet: $tablet - $viewport-increment;
+
+// Palm
+$palm: 640px;
+$post-palm: $palm + $viewport-increment;
+
+// Constraints
+$min: min-width;
+$max: max-width;
+
+$font-primary: Avenir, 'Helvetica';
+$font-stack: Georgia, Times, "Times New Roman", serif;
+
+$full-width: 1200px;
+$laptop-width: 960px;
+$tablet-width: 768px;
+$phone-width: 600px;
+
+
+$base-size: 14px;
+
+$red-link: #D11241;
+$red: #d9515b;
+$lightgrey: #818286;
+$darkgrey: #222;
